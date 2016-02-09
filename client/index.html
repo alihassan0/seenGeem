@@ -2,10 +2,26 @@
   
 </head>
 <body>
-
 {{>header}}
 
+<div class="main ui container">
 
+<form class="ui form new-question">
+  <div class="field">
+    <label>User Input</label>
+     <input type="text" name="text" placeholder="Ask a question" />
+  </div>
+</form>
+
+<div class="ui segments">
+  
+  {{#each questions}}
+        {{> question}}
+  {{/each}}
+</div>
+
+
+</div>
 
 {{>footer}}
 
