@@ -4,12 +4,16 @@
 	<div class="ui right floated button">Floated</div>
 </div>
 <div class="ui secondary segment">
-	<div class="field">
-	    <!--label for="postalCode05">Postcode</label-->
-	    <div class="ui action input">
-	        <input type="text" placeholder=" ask a question"/>
-	        <div class="ui button" > ask!</div>
-	    </div>
-	</div>
+	{{#each answers}}
+		{{> answer}}
+	{{/each}}
+	<form class="ui form answer">
+		<!--label for="postalCode05">Postcode</label-->
+		<div class="ui action input">
+			<input type="text" name="text" placeholder=" tones"/>
+			<button class="ui button answerbtn" > answer!</button>
+		</div>
+	</form>
 </div>
+
 </template>

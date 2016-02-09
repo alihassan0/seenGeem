@@ -16,6 +16,7 @@ if (Meteor.isClient) {
     "submit .new-question": function (event) {
       // Prevent default browser form submit
       event.preventDefault();
+
  	  console.log("sad");
       // Get value from form element
       var text = event.target.text.value;
@@ -31,8 +32,60 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.question.helpers({
+    answers: function () {
+      return Answers.find({question_id : this._id});
+    }
+  });
+
+	Template.question.events({
+    "click .toggle-checked": function () {
+      // Set the checked property to the opposite of its current value
+      Tasks.update(this._id, {
+        $set: {checked: ! this.checked}
+      });
+    },
+    "click .delete": function () {
+      Tasks.remove(this._id);
+    },
+    "submit .answer": function () {
+   		// Prevent default browser form submit
+      event.preventDefault();
+
+ 	 	  console.log("btngan");
+ 	  	
+      // Get value from form element
+      var text = event.target.text.value;
+ 			
+      // Insert a task into the collection
+      Answers.insert({
+        text: text,
+        question_id : this._id,
+        createdAt: new Date() // current time
+      });
+ 
+      // Clear form
+      event.target.text.value = "";
+    },
+    "submit .answerbtn": function () {
+   		// Prevent default browser form submit
+      event.preventDefault();
 
 
-
+ 	  	
+      // Get value from form element
+      var text = event.target.text.value;
+ 			
+      // Insert a task into the collection
+      Answers.insert({
+        text: text,
+        question_id : this._id,
+        createdAt: new Date() // current time
+      });
+ 
+      // Clear form
+      event.target.text.value = "";
+    }
+  });
 
 }
