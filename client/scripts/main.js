@@ -31,9 +31,18 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.question.created = function () {
+    // counter starts at 0
+    this.hide = new ReactiveVar(false);
+    this.hide.set(false);
+  };
+
   Template.question.helpers({
     answers: function () {
       return Answers.find({question_id : this._id});
+    },
+    hide: function () {
+      return Template.instance().hide.get();
     }
   });
 
@@ -43,6 +52,15 @@ if (Meteor.isClient) {
       Tasks.update(this._id, {
         $set: {checked: ! this.checked}
       });
+    },
+    "click .show-more": function (e) {
+      Template.instance().hide.set(!Template.instance().hide.get());
+    	if(Template.instance().hide.get()) 
+    		$(e.target).text("show less");
+    	else
+    		$(e.target).text("show More");
+
+
     },
     "click .deleteQ": function () {
       Questions.remove(this._id);

@@ -1,9 +1,9 @@
 <template name="question">
 <div class="ui clearing segment">
 	<h1 class="ui left floated header text"> {{text}} </h1>
-	<div class="ui right floated button">Floated</div>
+	<div class="ui right floated button show-more">show More</div>
 </div>
-{{#if isTrue}}
+{{#if hide}}
 	<div class="ui secondary segment">
 		{{#each answers}}
 			{{> answer}}
@@ -17,5 +17,10 @@
 		</form>
 	</div>
 {{/if}}
+ {{#if hide}}
+        ******************************************************************************
+    {{else}}
+        --------------------------------------------------------------------------------
+    {{/if}}
 
 </template>
