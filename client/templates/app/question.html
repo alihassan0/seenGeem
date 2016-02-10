@@ -3,17 +3,19 @@
 	<h1 class="ui left floated header text"> {{text}} </h1>
 	<div class="ui right floated button">Floated</div>
 </div>
-<div class="ui secondary segment">
-	{{#each answers}}
-		{{> answer}}
-	{{/each}}
-	<form class="ui form answer">
-		<!--label for="postalCode05">Postcode</label-->
-		<div class="ui action input">
-			<input type="text" name="text" placeholder=" tones"/>
-			<button class="ui button answerbtn" > answer!</button>
-		</div>
-	</form>
-</div>
+{{#if isTrue}}
+	<div class="ui secondary segment">
+		{{#each answers}}
+			{{> answer}}
+		{{/each}}
+		<form class="ui form answer">
+			<!--label for="postalCode05">Postcode</label-->
+			<div class="ui action input">
+				<input type="text" name="text" placeholder=" tones"/>
+				<button class="ui button answerbtn" > answer!</button>
+			</div>
+		</form>
+	</div>
+{{/if}}
 
 </template>

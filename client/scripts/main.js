@@ -17,7 +17,6 @@ if (Meteor.isClient) {
       // Prevent default browser form submit
       event.preventDefault();
 
- 	  console.log("sad");
       // Get value from form element
       var text = event.target.text.value;
  
@@ -45,8 +44,11 @@ if (Meteor.isClient) {
         $set: {checked: ! this.checked}
       });
     },
-    "click .delete": function () {
-      Tasks.remove(this._id);
+    "click .deleteQ": function () {
+      Questions.remove(this._id);
+    },
+    "click .deleteA": function () {
+      Answers.remove(this._id);
     },
     "submit .answer": function () {
    		// Prevent default browser form submit
