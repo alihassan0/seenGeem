@@ -5,22 +5,19 @@
 </div>
 {{#if hide}}
 	<div class="ui secondary segment">
-		{{#each answers}}
-			{{> answer}}
-		{{/each}}
+		<div class="ui segments">
+			{{#each answers}}
+				{{> answer}}
+			{{/each}}
+		</div>
 		<form class="ui form answer">
 			<!--label for="postalCode05">Postcode</label-->
 			<div class="ui action input">
-				<input type="text" name="text" placeholder=" tones"/>
+				<input type="text" name="text" placeholder=" tunis"/>
 				<button class="ui button answerbtn" > answer!</button>
 			</div>
 		</form>
 	</div>
 {{/if}}
- {{#if hide}}
-        ******************************************************************************
-    {{else}}
-        --------------------------------------------------------------------------------
-    {{/if}}
 
 </template>

@@ -21,3 +21,4 @@ semantic:ui
 flemay:less-autoprefixer
 jquery
 reactive-var
+iron:router

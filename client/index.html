@@ -4,16 +4,14 @@
 <body>
 {{>header}}
 
-<div class="main ui container">
 
-<form class="ui form new-question">
+<form class=" ui vertical stripe container form new-question">
   <div class="field">
-    <label>User Input</label>
-     <input type="text" name="text" placeholder="Ask a question" />
+     <input class = "small" type="text" name="text" placeholder="Ask a question" />
   </div>
 </form>
 
-<div class="ui">
+<div class="ui vertical stripe container">
   
   {{#each questions}}
         {{> question}}
@@ -21,8 +19,6 @@
   {{/each}}
 </div>
 
-
-</div>
 
 {{>footer}}
 
