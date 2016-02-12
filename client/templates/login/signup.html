@@ -15,28 +15,28 @@
   </style>
 <div class="ui stackable grid">
 	<div class="eight wide centered column">
-		<form class="ui form segment" method="POST" action="/register" >
+		<form class="ui form segment"  >
 			<div class="two fields">
 				<div class="field">
 					<label>First Name</label>
-					<input placeholder="First Name" name="firstname" type="text">
+					<input placeholder="First Name" name="fname" type="text">
 				</div>
 				<div class="field">
 					<label>Last Name</label>
-					<input placeholder="Last Name" name="lastname" type="text">
+					<input placeholder="Last Name" name="lname" type="text">
 				</div>
 			</div>
 			<div class="field">
 				<label>Email Address</label>
-				<input placeholder="email@example.com" name="haltuser" type="text" >
+				<input placeholder="email@example.com" name="email" type="text" >
 			</div>
 			<div class="field">
 				<label>Password</label>
-				<input type="password" name="haltpass">
+				<input type="password" name="pass">
 			</div>
 			<div class="field">
 				<label>Repeat Password</label>
-				<input type="password" name="haltpassa">
+				<input type="password" name="repass">
 			</div>
 			<div class="field">
 				<input type="hidden" name="gender" value="1455291533.8268065">
@@ -47,14 +47,14 @@
 			<div class="field">
 				<input type="hidden" name="address" value="f35206c8ec35c72d4999bac6aa57e001599c5e33">
 			</div>
-			<div class="inline field">
+			<div class=" field">
 				<div class="ui checkbox">
 					<input type="checkbox" name="terms" tabindex="0">
 					<label>I agree to the <a href="/help/pages/terms_and_conditions.html">Terms and Conditions</a></label>
 				</div>
 			</div>
 			<div class="ui two buttons" >
-				<div class="big ui green submit button">Submit</div>
+				<input class="big ui green submit button" type = "submit" value = "submit">
 				<a class="big ui animated blue button" tabindex="0" href="/login" >
 					<div class="visible content">Or, Login</div>
 					<div class="hidden content">

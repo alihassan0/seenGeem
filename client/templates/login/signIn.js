@@ -6,14 +6,14 @@ var debug = function(ev,text){
 Template.signIn.events({
   "submit .form" : function(ev){
     debug(ev,"submit2");
-    var userName = ev.target.email.value;
+    var email = ev.target.email.value;
     var password = ev.target.password.value;
-    Meteor.loginWithPassword(userName,password,function(err){
+    Meteor.loginWithPassword({email:email},password,function(err){
         if(err)
-        {
-          console.log(userName +" " + password + " " +err);
-        }
+          console.log(email +" " + password + " " +err);
+        else
+          console.log("welcome " + email);
     })
-  },
+  }
   
 });
