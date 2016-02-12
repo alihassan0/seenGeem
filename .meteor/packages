@@ -22,3 +22,4 @@ flemay:less-autoprefixer
 jquery
 reactive-var
 iron:router
+pcel:loading

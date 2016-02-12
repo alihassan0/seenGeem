@@ -1,26 +1,17 @@
-<head>
-  
-</head>
-<body>
-{{>header}}
-
-
-<form class=" ui vertical stripe container form new-question">
-  <div class="field">
-     <input class = "small" type="text" name="text" placeholder="Ask a question" />
-  </div>
-</form>
-
-<div class="ui vertical stripe container">
-  
-  {{#each questions}}
-        {{> question}}
-        <div class="ui divider"></div>
-  {{/each}}
-</div>
-
-
-{{>footer}}
-
-</body>
-
+<template name = "home">
+	<head>
+		<title> Seen Geem </title>	
+	</head>
+	<form class=" ui vertical stripe container form new-question">
+		<div class="field">
+			<input class = "small" type="text" name="text" placeholder="Ask a question" />
+		</div>
+	</form>
+	<div class="ui vertical stripe container">
+		
+		{{#each questions}}
+		{{> question}}
+		<div class="ui divider"></div>
+		{{/each}}
+	</div>
+</template>

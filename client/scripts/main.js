@@ -3,7 +3,7 @@ Answers = new Mongo.Collection("answers");
 
 if (Meteor.isClient) {
   // This code only runs on the client
-  Template.body.helpers({
+  Template.home.helpers({
     questions: function () {
       return Questions.find({});
     },
@@ -12,7 +12,7 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.body.events({
+  Template.home.events({
     "submit .new-question": function (event) {
       // Prevent default browser form submit
       event.preventDefault();
