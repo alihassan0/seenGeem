@@ -23,3 +23,5 @@ jquery
 reactive-var
 iron:router
 pcel:loading
+accounts-ui
+accounts-password
