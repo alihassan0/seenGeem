@@ -1,6 +1,3 @@
-Questions = new Mongo.Collection("questions");
-Answers = new Mongo.Collection("answers");
-
 if (Meteor.isClient) {
   // This code only runs on the client
   Template.home.helpers({

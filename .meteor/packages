@@ -25,3 +25,6 @@ iron:router
 pcel:loading
 accounts-ui
 accounts-password
+cfs:standard-packages
+cfs:filesystem
+cfs:gridfs

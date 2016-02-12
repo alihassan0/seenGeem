@@ -1,0 +1,17 @@
+<template name = "profile">
+	this is a profile 
+	<input type="file" name="upload image" class="myFileInput">
+	{{>imageView}}
+</template>
+
+<template name="imageView">
+  <div class="imageView">
+    {{#each images}}
+    	<div class="segment">{{this.url}}</div>
+      <div>
+        <a href="{{this.url}}" target="_blank"><img src="{{this.url}}" store='thumbs' uploading='/images/uploading.gif' storing='/images/storing.gif' alt="" class="thumbnail" /></a>
+      </div>
+    {{/each}}
+  </div>
+</template>
+
