@@ -20,10 +20,12 @@ Template.profile.events({
             });
         });
     }
-})
+});
 Template.imageShow.helpers({
-  image: function () {
-    //console.log(Images.findOne({"_id" : Meteor.user().profile.image}));
-    return Images.findOne({"_id" : Meteor.user().profile.image}); // Where Images is an FS.Collection instance
-  }
+    image: function() {
+        //console.log(Images.findOne({"_id" : Meteor.user().profile.image}));
+        return Images.findOne({
+            "_id": Meteor.user().profile.image
+        }); // Where Images is an FS.Collection instance
+    }
 });
