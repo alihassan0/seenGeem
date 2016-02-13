@@ -1,17 +1,62 @@
 <template name = "profile">
-	this is a profile 
-	<input type="file" name="upload image" class="myFileInput">
-	{{>imageView}}
+<div class="ui stackable grid">
+	<div class="eight wide centered column">
+		<div class="ui form segment"  >
+			<div class="container 	imageView">
+				{{#if currentUser}}
+				<div class="field">
+					{{>imageShow}}
+				</div>
+				<div class="two fields">
+					<div class="field">
+						<label>First Name</label>
+						<input placeholder="First Name" name="fname" type="text">
+					</div>
+					<div class="field">
+						<label>Last Name</label>
+						<input placeholder="Last Name" name="lname" type="text">
+					</div>
+				</div>
+				<div class="field">
+					<label>Email Address</label>
+					<input placeholder="email@example.com" name="email" type="text" >
+				</div>
+				<div class="field">
+					<label>Password</label>
+					<input type="password" name="pass">
+				</div>
+				<div class="field">
+					<label>Repeat Password</label>
+					<input type="password" name="repass">
+				</div>
+				<div class="field">
+					<input type="hidden" name="gender" value="1455291533.8268065">
+				</div>
+				<div class="field">
+					<input type="hidden" name="comment" value="e0b0fbb31ad7536d8c1c3ccf2cb1473c9c08e9e2">
+				</div>
+				<div class="field">
+					<input type="hidden" name="address" value="f35206c8ec35c72d4999bac6aa57e001599c5e33">
+				</div>
+				<input type="file" name="upload image" class="myFileInput">
+				<div>
+					<div class="main ui container">
+						<img class="ui small circular image" src="{{this.image.url}}">
+					</div>
+				</div>
+				<p>{{firstName}}</p>
+				<p>{{lastName}}</p>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</div>
 </template>
-
-<template name="imageView">
-  <div class="imageView">
-    {{#each images}}
-    	<div class="segment">{{this.url}}</div>
-      <div>
-        <a href="{{this.url}}" target="_blank"><img src="{{this.url}}" store='thumbs' uploading='/images/uploading.gif' storing='/images/storing.gif' alt="" class="thumbnail" /></a>
-      </div>
-    {{/each}}
-  </div>
+<template name="imageShow">
+<!-- i am sure this should be refractored along the line and combined in the profile template-->
+<div class="ui small centered circular image">
+	<svg width="150" height="150">
+		<image xlink:href="{{image.url}}" x="0" y="0" width="100%" height="100%"></image>
+	</svg>
+</div>
 </template>
-

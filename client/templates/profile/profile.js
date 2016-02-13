@@ -10,7 +10,7 @@ Template.profile.events({
                     // handle success depending what you need to do
                     var userId = Meteor.userId();
                     var imagesURL = {
-                        "profile.image": "public/files/images/x.jpg" //+ fileObj._id
+                        "profile.image": "" + fileObj._id
                     };
                     console.log(imagesURL);
                     Meteor.users.update(userId, {
@@ -21,9 +21,9 @@ Template.profile.events({
         });
     }
 })
-
-Template.imageView.helpers({
-  images: function () {
-    return Images.find(); // Where Images is an FS.Collection instance
+Template.imageShow.helpers({
+  image: function () {
+    //console.log(Images.findOne({"_id" : Meteor.user().profile.image}));
+    return Images.findOne({"_id" : Meteor.user().profile.image}); // Where Images is an FS.Collection instance
   }
 });

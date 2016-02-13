@@ -12,7 +12,10 @@ Template.signIn.events({
         if(err)
           console.log(email +" " + password + " " +err);
         else
+        {
           console.log("welcome " + email);
+          console.log( Meteor.userId() && Meteor.user() && Meteor.user().profile.image );
+        }
     })
   }
   
