@@ -1,7 +1,6 @@
 var debug = function(ev,text){
   ev.preventDefault();
   console.log(text);
-
 }
 Template.signIn.events({
   "submit .form" : function(ev){
@@ -18,7 +17,6 @@ Template.signIn.events({
         }
     })
   }
-  
 });
 
 Template.signIn.rendered = function() {
