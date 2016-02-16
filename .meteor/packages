@@ -27,4 +27,8 @@ accounts-ui
 accounts-password
 cfs:standard-packages
 cfs:filesystem
-cfs:gridfs
+loredanacirstea:cfs-autoform-semantic-ui
+cfs:autoform
+aldeed:collection2
+aldeed:autoform
+fabienb4:autoform-semantic-ui
